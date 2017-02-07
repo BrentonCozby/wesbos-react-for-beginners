@@ -7,7 +7,7 @@ class StorePicker extends Component {
         console.log(this.storeInput.value);
     }
 
-    getInput = (input) => this.storeInput = input;
+    getInput = input => {this.storeInput = input};
 
     render () {
         return (
