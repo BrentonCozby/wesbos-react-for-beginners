@@ -206,6 +206,7 @@ h3 {
 }
 header.top {
   text-align: center;
+  margin-bottom: 20px;
 }
 header.top h1 {
   font-size: 14.4rem;
@@ -442,8 +443,8 @@ ul.order li span.count span {
           transform: translateZ(0);
 }
 .menu-fish {
-  border-bottom: 2px solid #000;
-  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-top: 2px solid #000;
   padding-bottom: 2rem;
   padding-top: 2rem;
   margin-bottom: 5px;

@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+// import { withRouter } from 'react-router';
 import {getFunName} from '../helpers';
 
 class StorePicker extends Component {
     goToStore = (event) => {
         event.preventDefault();
-        console.log(this.storeInput.value);
+
+        const storeId = this.storeInput.value;
+        console.log(`Going to storeId: ${storeId}...`);
+
+        // this.props.router.transitionTo(`/store/${storeId}`);
+        this.context.router.transitionTo(`/store/${storeId}`);
     }
 
     getInput = input => {this.storeInput = input};
@@ -25,4 +31,11 @@ class StorePicker extends Component {
     }
 }
 
+// const StorePickerWithRouter = withRouter(StorePicker);
+
+StorePicker.contextTypes = {
+    router: React.PropTypes.object
+};
+
+// export default StorePickerWithRouter;
 export default StorePicker;
