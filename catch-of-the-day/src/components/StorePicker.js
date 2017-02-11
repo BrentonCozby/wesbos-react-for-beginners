@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import { withRouter } from 'react-router';
 import {getFunName} from '../helpers';
 
 class StorePicker extends Component {
@@ -12,10 +11,8 @@ class StorePicker extends Component {
         event.preventDefault();
 
         const storeId = this.storeInput.value;
-        console.log(`Going to storeId: ${storeId}...`);
 
-        // this.props.router.transitionTo(`/store/${storeId}`);
-        this.context.router.transitionTo(`/store/${storeId}`);
+        this.context.router.transitionTo(`/projects/wesbos-react-for-beginners/store/${storeId}`);
     }
 
     getInput = input => {this.storeInput = input};
@@ -36,7 +33,4 @@ class StorePicker extends Component {
     }
 }
 
-// const StorePickerWithRouter = withRouter(StorePicker);
-
-// export default StorePickerWithRouter;
 export default StorePicker;
