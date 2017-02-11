@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "express": "^4.14.1"
-  }
+  },
+  "name": "wesbos-react-for-beginners",
+  "version": "1.0.0",
+  "description": "Online Fish Market tutorial by @wesbos",
+  "main": "server.js",
+  "repository": "https://github.com/BrentonCozby/wesbos-react-for-beginners.git",
+  "author": "Brenton Cozby <brenton.cozby@gmail.com>",
+  "license": "MIT"
 }

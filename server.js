@@ -8,6 +8,6 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'catch-of-the-day', 'build', 'index.html'));
 })
 
-app.listen(3004, function() {
-    console.log(`Listening on port 3004...`);
+app.listen(3003, function() {
+    console.log(`Listening on port 3003...`);
 })
