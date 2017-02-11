@@ -37,22 +37,32 @@ class App extends Component {
         )
     }
 
+    addToOrder = (event) => {
+        var order = {...this.state.order}
+        const fishKey = event.target.dataset.key
+        order[fishKey] = order[fishKey] + 1 || 1
+
+        this.setState({ order })
+    }
+
+    removeFromOrder = (event) => {
+        var order = {...this.state.order}
+        const fishKey = event.target.dataset.key
+        delete order[fishKey]
+
+        this.setState({ order })
+    }
+
+    // Inventory.js methods
+    loadSamples = () => {
+        this.setState({ fishes: {...sampleFishes} })
+    }
+
     addFish = (fish) => {
         var fishes = {...this.state.fishes}
         fishes['fish-' + Date.now()] = fish
 
         this.setState({ fishes });
-    }
-
-    addToOrder = (key) => {
-        var order = {...this.state.order}
-        order[key] = order[key] + 1 || 1
-
-        this.setState({ order })
-    }
-
-    loadSamples = () => {
-        this.setState({ fishes: {...sampleFishes} })
     }
 
     updateFish = (event) => {
@@ -61,6 +71,14 @@ class App extends Component {
         fishes[input.dataset.key][input.name] = (input.name === 'price')
             ? parseInt(input.value, 10)
             : input.value
+
+        this.setState({ fishes })
+    }
+
+    removeFish = (event) => {
+        const input = event.target
+        var fishes = {...this.state.fishes}
+        fishes[input.dataset.key] = null
 
         this.setState({ fishes })
     }
@@ -88,12 +106,15 @@ class App extends Component {
                     fishes={this.state.fishes}
                     order={this.state.order}
                     storeId={this.props.params.storeId}
+                    removeFromOrder={this.removeFromOrder}
                 />
                 <Inventory
                     fishes={this.state.fishes}
+                    storeId={this.props.params.storeId}
                     addFish={this.addFish}
                     loadSamples={this.loadSamples}
                     updateFish={this.updateFish}
+                    removeFish={this.removeFish}
                 />
             </div>
         )

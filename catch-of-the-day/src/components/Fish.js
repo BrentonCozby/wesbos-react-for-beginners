@@ -10,8 +10,9 @@ const Fish = ({ name, price, status, desc, image, fishKey, addToOrder }) => (
         </h3>
         <p>{desc}</p>
         <button
+            data-key={fishKey}
             disabled={status === 'unavailable'}
-            onClick={() => addToOrder(fishKey)}>
+            onClick={addToOrder}>
                 {(status) === 'available' ? 'Add To Order' : 'SOLD OUT!'}
         </button>
     </li>

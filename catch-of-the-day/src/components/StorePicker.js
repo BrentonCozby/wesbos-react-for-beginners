@@ -3,6 +3,11 @@ import React, {Component} from 'react';
 import {getFunName} from '../helpers';
 
 class StorePicker extends Component {
+
+    static contextTypes = {
+        router: React.PropTypes.object
+    }
+
     goToStore = (event) => {
         event.preventDefault();
 
@@ -32,10 +37,6 @@ class StorePicker extends Component {
 }
 
 // const StorePickerWithRouter = withRouter(StorePicker);
-
-StorePicker.contextTypes = {
-    router: React.PropTypes.object
-};
 
 // export default StorePickerWithRouter;
 export default StorePicker;
