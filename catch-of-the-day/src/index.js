@@ -10,8 +10,8 @@ import NotFound from './components/NotFound';
 const Root = () => (
     <BrowserRouter>
         <div>
-            <Match exactly pattern="/projects/wesbos-react-for-beginners/" component={StorePicker}/>
-            <Match pattern="/projects/wesbos-react-for-beginners/store/:storeId" component={App}/>
+            <Match exactly pattern="/catch-of-the-day/" component={StorePicker}/>
+            <Match pattern="/catch-of-the-day/store/:storeId" component={App}/>
             <Miss component={NotFound}/>
         </div>
     </BrowserRouter>

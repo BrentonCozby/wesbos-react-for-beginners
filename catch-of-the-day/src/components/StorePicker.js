@@ -12,7 +12,7 @@ class StorePicker extends Component {
 
         const storeId = this.storeInput.value;
 
-        this.context.router.transitionTo(`/projects/wesbos-react-for-beginners/store/${storeId}`);
+        this.context.router.transitionTo(`/catch-of-the-day/store/${storeId}`);
     }
 
     getInput = input => {this.storeInput = input};
